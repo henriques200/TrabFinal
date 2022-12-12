@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  apache:
+    container_name: ti2_webserver
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+
+#falta o volume
