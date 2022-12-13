@@ -1,8 +1,8 @@
 $(function(){
     $("#submit_equip").click(function(){
-        let equip_name = ($("#nome_equip").val().toString());
-        let ip_equip = ($("#ip_equip").val().toString());
-        let user_equip = ($("#user_equip").val().toString());
+        var equip_name = ($("#nome_equip").val().toString());
+        var ip_equip = ($("#ip_equip").val().toString());
+        var user_equip = ($("#user_equip").val().toString());
         check_output(equip_name, ip_equip, user_equip);
     });
 });
