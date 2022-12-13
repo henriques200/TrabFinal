@@ -7,5 +7,5 @@ services:
     restart: unless-stopped
     ports:
       - "8080:80"
-
-#falta o volume
+    volumes:
+      - ./myweb/:/usr/local/apache2/htdocs/
