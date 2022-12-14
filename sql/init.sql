@@ -1,7 +1,10 @@
+-- Criar base de dados
 CREATE DATABASE EQUIP_BD;
 
-USE EQUIP_BD;
+-- Trabalhar na base de dados
+USE EQUIP_BD; 
 
+--Criar tabelas
 CREATE TABLE EQUIPAMENTO (
     Nome VARCHAR(255) NOT NULL,
     Ip_Nome VARCHAR(255) NOT NULL,
@@ -34,6 +37,7 @@ CREATE TABLE SISTEMA(
     PRIMARY KEY(Nome)
 );
 
+-- Inserir valores na tabela SISTEMA
 INSERT INTO SISTEMA (Nome, Fabricante)
 VALUES
     ('Windows10', 'Microsoft'),
