@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Sobre o projeto...</title>
+    <title>Adicionar Comando</title>
 </head>
 <body>
     <!--Menu-->
@@ -51,6 +51,7 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="list_cmd.html">Verificar / Listar</a></li>
                 </ul>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sair</a>
               </li>
@@ -63,31 +64,33 @@
     </nav>
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
-        <div class="row">
-          <div class="col">
-            <h3>Sobre o Projeto...</h3>
-            <p>Este projeto consiste na construção de um site, utilizando o que foi aprendido nas aulas da cadeia de TI II.</p>
-            <p>Na realização do projeto utilizou-se as seguintes tecnologias:</p>
-            <ul>
-                <li>HTML</li>
-                <li>Javascript</li>
-                <li>CSS</li>
-                <li>PHP</li>
-                <li>SQL</li>
-            </ul>
-            <p>Também se usou outras tecnologias na realização do site tais como:</p>
-            <ul>
-                <li>Bootstrap 5</li>
-                <li>Jquery</li>
-            </ul>
-            <h5>Desenvolvido por:</h5>
-            <p>Emanuel Henriques</p>
-            <p>ISTEC - Engenharia Informática - Turma 2A - Número 2414</p>
-            <h5>Orientado e avaliado por:</h5>
-            <p>José Neves</p>
-            <p>Cadeia de Tecnologias da Internet II</p>
-          </div>
-        </div>
+        <h3>Introduzir novo Comando</h3>
+        <form method="post">
+            <div class="form-group">
+              <label for="nome_group">Nome de código do comando</label>
+              <input type="text" class="form-control" id="nome_group" aria-describedby="group_help" placeholder="Introduz um nome...">
+              <small id="group_help" class="form-text text-muted">Código único do comando (ex.: UPDATE-1)</small>
+            </div>
+            <div class="form-group">
+                <label for="dono_group">Comando</label>
+                <input type="text" class="form-control" id="dono_group" aria-describedby="dono_help" placeholder="Introduz o comando...">
+                <small id="dono_help" class="form-text text-muted">Comando CLI do OS</small>
+            </div>
+            <div class="form-group">
+                <label for="dono_group">Descrição do Comando</label>
+                <input type="text" class="form-control" id="dono_group" aria-describedby="dono_help" placeholder="Introduz uma descrição...">
+                <small id="dono_help" class="form-text text-muted">Descrição breve do comando</small>
+            </div>
+            <label for="option_group">Sistema Operativo</label>
+            <select id="option_group" class="form-control">
+                <option selected>Escolhe...</option>
+                <option>Grupo 1</option>
+                <option>Grupo 2</option>
+                <option>Grupo 3</option>
+            </select>
+            <br>
+            <button type="submit" id="submit_group" class="btn btn-primary">Submeter</button>
+          </form>
     </div>
     <!--Footer-->
     <footer class="text-center p-3">
