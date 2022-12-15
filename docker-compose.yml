@@ -3,7 +3,7 @@ version: '3'
 services:
   apache:
     container_name: ti2_webserver
-    build: ./Web
+    build: ./web
     restart: unless-stopped
     ports:
       - "8080:80" #Web port
