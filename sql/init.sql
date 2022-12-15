@@ -1,16 +1,13 @@
--- Criar base de dados
 CREATE DATABASE EQUIP_BD;
 
--- Trabalhar na base de dados
-USE EQUIP_BD; 
+USE EQUIP_BD;
 
---Criar tabelas
 CREATE TABLE GRUPO(
     Nome VARCHAR(255) NOT NULL,
     Dono VARCHAR(255) NOT NULL,
     Phone INT NOT NULL,
     NIF INT NOT NULL,
-    PRIMARY KEY(NIF)
+    PRIMARY KEY(Nome)
 );
 
 CREATE TABLE SISTEMA(
@@ -35,17 +32,15 @@ CREATE TABLE EQUIPAMENTO (
     Pass VARCHAR(255),
     OS VARCHAR(255) NOT NULL,
     Grupo VARCHAR(255) NOT NULL,
-    -- Uso de Constraints para especificar regras
-    CONSTRAINT PrimKey PRIMARY KEY(Nome),
+    PRIMARY KEY(Nome),
     FOREIGN KEY (OS) REFERENCES SISTEMA(Nome),
     FOREIGN KEY (Grupo) REFERENCES GRUPO(Nome)
 );
 
--- Inserir valores na tabela SISTEMA
 INSERT INTO SISTEMA (Nome, Fabricante)
 VALUES
     ('Windows10', 'Microsoft'),
-    ('Ubuntu20.04', "Canonical"),
+    ('Ubuntu20.04', 'Canonical'),
     ('RouterOS', 'Microtik'),
     ('SwitchOS', 'Microtik'),
     ('Cisco IOS', 'Cisco');
