@@ -5,3 +5,4 @@ COPY . /usr/local/apache2/htdocs/
 
 #Expoe os portos necessarios
 EXPOSE 80
+EXPOSE 3306
