@@ -1,12 +1,12 @@
 $(function(){
     $("form").submit(function(e){
-        /*
-        Check if post content is not empty.
-        */
+        //Fetch the required form data.
         var group_name = $("#nome_group").val().toString();
         var group_owner = $("#dono_group").val().toString();
         var phone_number = $("#phone_number").val().toString();
         var nif = $("#nif").val().toString();
+
+        //Check if post content is empty.
         if(group_name.length === 0) {
             alert("Nome Vazio!");
             e.preventDefault();
