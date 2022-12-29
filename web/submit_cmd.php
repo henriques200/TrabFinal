@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
       //Query to check certain groupname.
-      $search_codeaname = $conn->query("SELECT COUNT(*) FROM COMANDO WHERE Nome='$codename'");
+      $search_codeaname = $conn->query("SELECT COUNT(*) FROM COMANDO WHERE Nome_codigo='$codename'");
 
       //Check if Command Codename already exists.
       if($search_codeaname->fetchColumn() > 0){
