@@ -65,28 +65,25 @@
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
         <h3>Introduzir novo Comando</h3>
-        <form method="post">
+        <form id="submit_cmd" method="post" novalidate method="POST" action="submit_cmd.php">
             <div class="form-group">
-              <label for="nome_group">Nome de código do comando</label>
-              <input type="text" class="form-control" id="nome_group" aria-describedby="group_help" placeholder="Introduz um nome...">
+              <label for="codename">Nome de código do comando</label>
+              <input type="text" class="form-control" id="codename" name="codename" aria-describedby="codename_help" placeholder="Introduz um nome...">
               <small id="group_help" class="form-text text-muted">Código único do comando (ex.: UPDATE-1)</small>
             </div>
             <div class="form-group">
-                <label for="dono_group">Comando</label>
-                <input type="text" class="form-control" id="dono_group" aria-describedby="dono_help" placeholder="Introduz o comando...">
-                <small id="dono_help" class="form-text text-muted">Comando CLI do OS</small>
+                <label for="cmd">Comando</label>
+                <input type="text" class="form-control" id="cmd" name="cmd" aria-describedby="cmd_help" placeholder="Introduz o comando...">
+                <small id="cmd_help" class="form-text text-muted">Comando CLI do OS</small>
             </div>
             <div class="form-group">
-                <label for="dono_group">Descrição do Comando</label>
-                <input type="text" class="form-control" id="dono_group" aria-describedby="dono_help" placeholder="Introduz uma descrição...">
+                <label for="cmd_desc">Descrição do Comando</label>
+                <input type="text" class="form-control" id="cmd_desc" name="cmd_desc" aria-describedby="cmd_desc" placeholder="Introduz uma descrição...">
                 <small id="dono_help" class="form-text text-muted">Descrição breve do comando</small>
             </div>
-            <label for="option_group">Sistema Operativo</label>
-            <select id="option_group" class="form-control">
-                <option selected>Escolhe...</option>
-                <option>Grupo 1</option>
-                <option>Grupo 2</option>
-                <option>Grupo 3</option>
+            <label for="opt_os">Sistema Operativo</label>
+            <select id="opt_os" name="opt_os" class="form-control">
+                <option selected disabled>Escolhe...</option>
             </select>
             <br>
             <button type="submit" id="submit_group" class="btn btn-primary">Submeter</button>
@@ -99,5 +96,6 @@
     </div>
     <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/add_cmd.js"></script>
 </body>
 </html>
