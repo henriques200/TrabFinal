@@ -66,26 +66,26 @@ $(function(){
             alert("Introduz um SO válido!");
             e.preventDefault();
             return false;
-        } else if(group.length === 0){
+        } else if(group.length === 0 || group === "Escolhe..."){
             alert("Introduz um grupo válido!");
             e.preventDefault();
             return false;
         } else {
             $.ajax({
                 type: 'POST',
-                url: './submit_cmd.php',
-                data: $('#add_new_cmd').serializeArray(),
+                url: './submit_equip.php',
+                data: $('#add_new_equip').serializeArray(),
                 dataType: "json",
                 encode: true,
                 cache: false,
                 beforeSend: function () {
                     //We add this before send to disable the button once we submit it so that we prevent the multiple click
-                    $('#submit_cmd').attr("disabled", true);
+                    $('#submit_equip').attr("disabled", true);
                 },
                 success: function(data){
                     console.log(data); //Para fins de diagnóstico.
                     if(data.error === 1) window.alert ("Erro!\n" + data.message);
-                    else window.alert("Comando adicionado com sucesso!");
+                    else window.alert("Equipamento adicionado com sucesso!");
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     window.alert("Erro nos dados submetidos!");
@@ -94,8 +94,8 @@ $(function(){
                     console.log(errorThrown.toString()); //Para fins de diagnóstico.
                 },
                 complete: function(){
-                    $("#add_new_cmd").trigger("reset");
-                    $("#submit_cmd").attr("disabled", false);
+                    $("#add_new_equip").trigger("reset");
+                    $("#submit_equip").attr("disabled", false);
                 }
             });
             e.preventDefault();
