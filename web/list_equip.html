@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Adicionar Equipamento</title>
+    <title>Lista de Equipamentos</title>
 </head>
 <body>
     <!--Menu-->
@@ -64,38 +64,25 @@
     </nav>
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
-        <h3>Introduzir novo equipamento</h3>
-        <form id="add_new_equip" novalidate method="POST" action="submit_equip.php">
-            <div class="form-group">
-              <label for="nome_equip">Nome do Equipamento</label>
-              <input type="text" class="form-control" id="nome_equip" name="nome_equip" aria-describedby="nome_help" placeholder="Introduz um nome...">
-              <small id="nome_help" class="form-text text-muted">Nome conhecido do equipamento</small>
-            </div>
-            <div class="form-group">
-                <label for="ip_equip">IP/FQDN do equipamento</label>
-                <input type="text" class="form-control" id="ip_equip" name="ip_equip" aria-describedby="ip_help" placeholder="Introduz um end. IP...">
-                <small id="ip_help" class="form-text text-muted">End. IP ou nome de domínio do equipamento</small>
-            </div>
-            <div class="form-group">
-                <label for="user_equip">Utilizador(username)</label>
-                <input type="text" class="form-control" id="user_equip" name="user_equip" aria-describedby="user_help" placeholder="Introduz o utilizador...">
-                <small id="user_help" class="form-text text-muted">Utizador que o serviço vai aceder remotamente</small>
-            </div>
-            <div class="form-group">
-              <label for="pass_equip">Password</label>
-              <input type="password" class="form-control" id="pass_equip" name="pass_equip" placeholder="Password">
-            </div>
-            <label for="opt_os">Sistema Operativo</label>
-            <select id="opt_os" name="opt_os" class="form-select">
-                <option selected disabled>Escolhe...</option>
-            </select>
-            <label for="select_group">Grupo</label>
-            <select id="select_group" name="select_group" class="form-select">
-                <option selected disabled>Escolhe...</option>
-            </select>
-            <br>
-            <button type="submit" id="submit_equip" class="btn btn-primary">Submeter</button> <!--button p/ teste. submit no final-->
-          </form>
+        <div class="row">
+          <div class="col">
+            <h3>Titulo</h3>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <h3>Titulo 2</h3>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+            <p>Teste</p>
+          </div>
+        </div>
     </div>
     <!--Footer-->
     <footer class="text-center p-3">
@@ -104,6 +91,5 @@
     </div>
     <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.1.js"></script>
-    <script src="js/add_equip.js"></script>
 </body>
 </html>
