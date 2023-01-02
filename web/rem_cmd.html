@@ -64,25 +64,14 @@
     </nav>
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
-        <div class="row">
-          <div class="col">
-            <h3>Titulo</h3>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <h3>Titulo 2</h3>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-          </div>
-        </div>
+      <h3>Remover Grupo</h3>
+      <form id="remove_cmd" class="row g-3 needs-validation"  novalidate method="POST" action="rem_cmd.php">
+          <label for="select_cmd">Seleciona o comando a eliminar</label>
+          <select name="select_cmd" id="select_cmd" class="form-select">
+              <option selected disabled value="">Escolhe...</option>
+          </select>
+          <input type="submit" id="sub_rem_cmd" class="btn btn-primary" value="Submeter">
+      </form>
     </div>
     <!--Footer-->
     <footer class="text-center p-3">
@@ -91,5 +80,6 @@
     </div>
     <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/rem_cmd.js"></script>
 </body>
 </html>
