@@ -1,5 +1,5 @@
 <?php
-include("env.php");
+require("env.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Fetch the required form data.
