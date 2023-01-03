@@ -1,5 +1,5 @@
 <?php
-require("env.php");
+require("./env.php");
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
