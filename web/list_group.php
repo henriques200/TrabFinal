@@ -1,12 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "EQUIP_BD";
-$error = 0;
-$msg = "";
-$redirect = "";
-
+include("env.php");
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

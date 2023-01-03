@@ -1,12 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "EQUIP_BD";
-$error = 0;
-$msg = "";
-$redirect = "";
-
+include("env.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Fetch the required form data.
