@@ -2,7 +2,7 @@
 $servername = getenv("SRV_ADDR");
 $username = getenv("WEB_USER");
 $password = getenv("WEB_PASSWORD");
-$dbname = getenv("DBNAME");
+$dbname = "EQUIP_BD";
 $error = 0;
 $msg = "";
 $redirect = "";
@@ -10,7 +10,6 @@ $redirect = "";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "EQUIP_BD";
 
 /*
 if(is_null($servername)) $servername = "localhost";
