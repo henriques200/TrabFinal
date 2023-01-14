@@ -40,3 +40,26 @@ VALUES
     ('RouterOS', 'Microtik'),
     ('SwitchOS', 'Microtik'),
     ('Cisco IOS', 'Cisco');
+
+INSERT INTO GRUPO (Nome, Dono, Phone, NIF)
+VALUES
+    ('Grupo 1', 'Emanuel Henriques', 911223344, 273300143),
+    ('Grupo 2', 'Rui Duarte', 967125479, 21253641),
+    ('Grupo 3', 'Paulo Duarte', 914822314, 197456321),
+    ('Grupo 4', 'Diogo Salgado', 965412365, 123456789),
+    ('Grupo 5', 'Leonardo Videira', 96516574, 987654321),
+    ('Grupo 6', 'André Matias', 975312548, 741258963);
+
+INSERT INTO COMANDO (Nome_codigo, Comando, Descricao, OS) 
+VALUES
+    ('UpContainers', 'docker-compose up -d', 'Iniciar containers c/ docker-compose', 'Ubuntu20.04'),
+    ('WinIP', 'ipconfig /all', 'Verificar IPs Win', 'Windows10'),
+    ('UpdateUbuntu', 'apt -y update && apt -y upgrade', 'Atualizar SO ubuntu', 'Ubuntu20.04'),
+    ('IPRoute_IOS', 'show ip route', 'Routing IOS', 'CiscoIOS'),
+    ('RouterOS_IP', 'ip address print', 'Mostrar IPs RouterOS', 'RouterOS');
+
+INSERT INTO EQUIPAMENTO (Nome, Ip_Nome, Username, Pass, OS, Grupo)
+VALUES
+    ('Router1', '192.168.10.254', 'admin', 'admin', 'CiscoIOS', 'Grupo 1');
+    ('Server1', 'server1.home.local', 'root', '1234545', 'Ubuntu20.04', 'Grupo 3');
+    ('SW1', '192.168.10.107', 'mikrotik', 'Passw0rd', 'RouterOS', 'Grupo 1');
