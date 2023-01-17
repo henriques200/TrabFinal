@@ -10,6 +10,8 @@ $error = 0;
 $msg = "";
 $redirect = "";
 
+define("LOGFILE", "events.json");
+
 //Check DB access parameters
 if(empty($servername)) $servername = "localhost";
 if(empty($username)) $username = "root";

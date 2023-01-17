@@ -16,7 +16,7 @@ try {
     $msg = "Connection failed: " . $conn_error->getMessage();
 }
 
-//Closes DB connection.'
+//Closes DB connection.
 $conn = null;
 
 //Envia a resposta para a página HTML com o AJAX.

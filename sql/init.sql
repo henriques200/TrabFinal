@@ -55,11 +55,11 @@ VALUES
     ('UpContainers', 'docker-compose up -d', 'Iniciar containers c/ docker-compose', 'Ubuntu20.04'),
     ('WinIP', 'ipconfig /all', 'Verificar IPs Win', 'Windows10'),
     ('UpdateUbuntu', 'apt -y update && apt -y upgrade', 'Atualizar SO ubuntu', 'Ubuntu20.04'),
-    ('IPRoute_IOS', 'show ip route', 'Routing IOS', 'CiscoIOS'),
+    ('IPRoute_IOS', 'show ip route', 'Routing IOS', 'Cisco IOS'),
     ('RouterOS_IP', 'ip address print', 'Mostrar IPs RouterOS', 'RouterOS');
 
 INSERT INTO EQUIPAMENTO (Nome, Ip_Nome, Username, Pass, OS, Grupo)
 VALUES
-    ('Router1', '192.168.10.254', 'admin', 'admin', 'CiscoIOS', 'Grupo 1');
-    ('Server1', 'server1.home.local', 'root', '1234545', 'Ubuntu20.04', 'Grupo 3');
+    ('Router1', '192.168.10.254', 'admin', 'admin', 'Cisco IOS', 'Grupo 1'),
+    ('Server2', 'server1.home.local', 'root', '1234545', 'Ubuntu20.04', 'Grupo 3'),
     ('SW1', '192.168.10.107', 'mikrotik', 'Passw0rd', 'RouterOS', 'Grupo 1');
