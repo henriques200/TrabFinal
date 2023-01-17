@@ -7,6 +7,10 @@ services:
     restart: unless-stopped
     ports:
       - "8080:80" #Web port
+    expose:
+      - 3306
+    networks:
+      - db_network
   db:
     container_name: database
     image: mysql
@@ -16,9 +20,17 @@ services:
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3306:3306"
+    expose:
+      - 3306
+    networks:
+      - db_network
     volumes:
       - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
       #- "db_data:/var/lib/mysql"
+
+networks:
+  db_network:
+    driver: bridge
 
 #volumes:
 #  db_data:
