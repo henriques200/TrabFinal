@@ -6,7 +6,7 @@ function new_event($type, $descr){
 	$error = 0;
 	if(file_exists(LOGFILE)){
 		$curr_json_data = read_file();
-		array_push($curr_json_data, array("type" => $type, "descr" => $descr));
+		array_push($curr_json_data, array("time" => date("d-m-Y H:i"), "type" => $type, "descr" => $descr));
 		$new_json_data = json_encode($curr_json_data, JSON_PRETTY_PRINT);
 		if(file_put_contents(LOGFILE, $new_json_data)) $error = 0;
 		else $error = 1;
@@ -18,7 +18,6 @@ function new_event($type, $descr){
 
 
 function read_file(){
-	$error = 0;
 	if(file_exists(LOGFILE)){
 		if(filesize(LOGFILE)){
 			$error = 0;
@@ -39,7 +38,11 @@ function read_file(){
 	return $log_array;
 }
 
-echo new_event("INFO", "Foi eliminado o comando 'SYSTEM_UPDATE'") . "<br>";
-var_dump(read_file());
+/*echo new_event("INFO", "Foi eliminado o comando 'SYSTEM_UPDATE'") . "<br>";
+var_dump(read_file());*/
 
+$msg = read_file();
+
+//Envia a resposta para a página HTML com o AJAX.
+echo json_encode(array('error' => $error, 'message' => $msg, 'redirect' => $redirect));
 ?>

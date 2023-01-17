@@ -1,4 +1,7 @@
 <?php
+//Constants
+define("LOGFILE", "events.json");
+
 //DB access parameters
 $servername = getenv("DB_ADDR");
 $username = getenv("DB_USER");
@@ -10,10 +13,13 @@ $error = 0;
 $msg = "";
 $redirect = "";
 
-define("LOGFILE", "events.json");
+//Other options
+$timezone = getenv("TIMEZONE");
 
 //Check DB access parameters
 if(empty($servername)) $servername = "localhost";
 if(empty($username)) $username = "root";
 
+if (empty($timezone)) date_default_timezone_set("Europe/Lisbon");
+else date_default_timezone_set($timezone);
 ?>
