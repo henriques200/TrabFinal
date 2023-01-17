@@ -1,5 +1,6 @@
 <?php
 require("env.php");
+require("events.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Fetch the required form data.
@@ -34,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql_insert_query = "INSERT INTO EQUIPAMENTO (Nome, Ip_Nome, Username, Pass, OS, Grupo) VALUES ('$equip_name', '$ip_equip', '$user_equip', '$pass_equip', '$opt_os', '$select_group')";
         $new_record = $conn->exec($sql_insert_query);
         $msg = "O equipamento $equip_name foi adicionado com sucesso!";
+        new_event("INFO", $msg);
       }
 
     } catch(PDOException $conn_error) {

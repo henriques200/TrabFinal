@@ -1,5 +1,6 @@
 <?php
 require("env.php");
+require("events.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Fetch the required form data.
@@ -32,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql_insert_query = "INSERT INTO GRUPO (Nome, Dono, Phone, NIF) VALUES ('$group_name', '$group_owner', '$phone_number', '$nif')";
         $new_record = $conn->exec($sql_insert_query);
         $msg = "O grupo $group_name foi adicionado com sucesso!";
+        new_event("INFO", $msg);
       }
 
     } catch(PDOException $conn_error) {
