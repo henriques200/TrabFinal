@@ -20,6 +20,7 @@ $timezone = getenv("TIMEZONE");
 if(empty($servername)) $servername = "localhost";
 if(empty($username)) $username = "root";
 
+//Timezone parameters
 if (empty($timezone)) date_default_timezone_set("Europe/Lisbon");
 else date_default_timezone_set($timezone);
 ?>

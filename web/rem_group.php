@@ -1,5 +1,6 @@
 <?php
 require("env.php");
+require("events.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Fetch the required form data.
@@ -26,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql_insert_query = "DELETE FROM GRUPO WHERE Nome='$group_name'";
             $new_record = $conn->exec($sql_insert_query);
             $msg = "O grupo $group_name foi removido com sucesso!";
+            new_event("INFO", $msg);
         } else {
             $error = 1;
             $msg = "O grupo $group_name não existe!";

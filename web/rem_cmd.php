@@ -1,5 +1,6 @@
 <?php
-require("./env.php");
+require("env.php");
+require("events.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Fetch the required form data.
@@ -26,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql_insert_query = "DELETE FROM COMANDO WHERE Nome_codigo='$codename'";
             $new_record = $conn->exec($sql_insert_query);
             $msg = "O comando $codename foi removido com sucesso!";
+            new_event("INFO", $msg);
         } else {
             $error = 1;
             $msg = "O nome de código como o comando $codename não existe!";

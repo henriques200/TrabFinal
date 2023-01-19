@@ -1,5 +1,6 @@
 <?php
 require("env.php");
+require("events.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Fetch the required form data.
@@ -26,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql_insert_query = "DELETE FROM EQUIPAMENTO WHERE Nome='$equip_name'";
             $new_record = $conn->exec($sql_insert_query);
             $msg = "O equipamento $equip_name foi removido com sucesso!";
+            new_event("INFO", $msg);
         } else {
             $error = 1;
             $msg = "O equipamento $equip_name não existe!";

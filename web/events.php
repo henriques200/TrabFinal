@@ -38,8 +38,6 @@ function read_file(){
 	return $log_array;
 }
 
-/*echo new_event("INFO", "Foi eliminado o comando 'SYSTEM_UPDATE'") . "<br>";
-var_dump(read_file());*/
 
 $msg = read_file();
 
