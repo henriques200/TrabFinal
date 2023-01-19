@@ -39,7 +39,10 @@ VALUES
     ('Ubuntu20.04', 'Canonical'),
     ('RouterOS', 'Microtik'),
     ('SwitchOS', 'Microtik'),
-    ('Cisco IOS', 'Cisco');
+    ('Cisco IOS', 'Cisco'),
+    ('CentOS', 'RedHat'),
+    ('Windows Server 2016', 'Microsoft'),
+    ('pfSense', 'Netgate');
 
 INSERT INTO GRUPO (Nome, Dono, Phone, NIF)
 VALUES
