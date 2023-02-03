@@ -7,10 +7,13 @@ LABEL version="1.0" description="TB_FINAL/Stable"
 #Copia os conteúdos do site para a imagem
 COPY . /var/www/html/
 
+#Adiciona ficheiro dos eventos e altera permissoes
 RUN touch /var/www/html/code/events.json
 RUN chown -R www-data:www-data /var/www/html/*
 
 #Instalar pacotes necessarios
+RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-enable pdo_mysql
 RUN apt-get -y update
 RUN apt-get install -y python3 \
     python3-pip \

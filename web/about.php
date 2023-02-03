@@ -27,7 +27,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="add_equip.php">Adicionar</a></li>
-                <li><a class="dropdown-item" href="rem_equip.php">Remover</a></li>
+                <li><a class="dropdown-item" href="remove_equip.php">Remover</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="list_equip.php">Verificar / Listar</a></li>
               </ul>
@@ -39,7 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="add_group.php">Adicionar</a></li>
-                  <li><a class="dropdown-item" href="rem_group.php">Remover</a></li>
+                  <li><a class="dropdown-item" href="remove_group.php">Remover</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="list_group.php">Verificar / Listar</a></li>
                 </ul>
@@ -50,7 +50,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="add_cmd.php">Adicionar</a></li>
-                  <li><a class="dropdown-item" href="rem_cmd.php">Remover</a></li>
+                  <li><a class="dropdown-item" href="remove_cmd.php">Remover</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="list_cmd.php">Verificar / Listar</a></li>
                 </ul>
