@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error = 1;
         $msg = "Credenciais Inválidas!";
         new_event("ERRO", "Tentativa de acesso indevido!");
-        header("location: ..\login.html");
+        header("location: ..\login.php");
     }
 } else {
     $error = 1;

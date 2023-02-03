@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
@@ -21,7 +22,7 @@
 						<div class="login-wrap p-0">
 							<h3 class="mb-4 text-center">Introduz as credenciais</h3>
 							<!--FORMULARIO-->
-							<form method="post" action="code/login.php" class="signin-form">
+							<form method="post" action="code/check_login.php" class="signin-form">
 								<div class="form-group">
 									<input type="text" name="username" class="form-control" placeholder="Username" required>
 								</div>

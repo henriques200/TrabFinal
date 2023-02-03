@@ -3,8 +3,8 @@ require("env.php");
 
 session_start();
 
-if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
-    header("location: login.html");
+if (isset($_SESSION['loggedin'])) {
+    header("location: login.php");
     exit();
 }
 ?>

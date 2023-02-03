@@ -1,3 +1,6 @@
+<?php
+    require("./code/check_session.php");
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -7,9 +10,6 @@
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Adicionar Grupo</title>
-    <?php
-    require("./code/check_session.php");
-    ?>
 </head>
 <body>
     <!--Menu-->
