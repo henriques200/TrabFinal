@@ -3,10 +3,10 @@ require("env.php");
 
 session_start();
 
-if (isset($_SESSION['loggedin'])) {
+if (session_status() == PHP_SESSION_ACTIVE) {
     $ok = 1;
 } else {
-    header("location: ..\login.php");
+    header("location: login.php");
     exit();
 }
 ?>

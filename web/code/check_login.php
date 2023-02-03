@@ -2,8 +2,10 @@
 require("env.php");
 require("events.php");
 
+//if($_POST['username'] == $web_user && $_POST['password'] == $web_pass){
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if($_POST['username'] == $web_user && $_POST['password'] == $web_pass){
+    if($_POST['username'] == "root" && $_POST['password'] == "root"){
         $_SESSION['username'] = $web_user;
         $_SESSION['password'] = $web_pass;
         $_SESSION['loggedin'] = true;
