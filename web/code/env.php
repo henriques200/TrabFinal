@@ -1,7 +1,4 @@
 <?php
-//Constants
-define("LOGFILE", "events.json");
-
 //DB access parameters
 $servername = getenv("DB_ADDR");
 $username = getenv("DB_USER");

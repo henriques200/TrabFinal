@@ -1,4 +1,7 @@
 <?php
+//Constants
+define("LOGFILE", "events.json");
+
 require("env.php");
 
 

@@ -13,7 +13,7 @@ RUN chown -R www-data:www-data /var/www/html/*
 #Instalar pacotes necessarios
 RUN apt-get -y update
 RUN apt-get install -y python3 \
-    python-pip \
+    python3-pip \
     openssh-server \
     openssh-client
 RUN pip3 install \ 
