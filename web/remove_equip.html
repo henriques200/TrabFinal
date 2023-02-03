@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Remover Comando</title>
+    <title>Eliminar Equipamento</title>
 </head>
 <body>
     <!--Menu-->
@@ -64,15 +64,15 @@
     </nav>
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
-      <h3>Remover Grupo</h3>
-      <form id="remove_cmd" class="row g-3 needs-validation"  novalidate method="POST" action="rem_cmd.php">
-          <label for="select_cmd">Seleciona o comando a eliminar</label>
-          <select name="select_cmd" id="select_cmd" class="form-select">
+      <h3>Remover Equipamento</h3>
+      <form id="remove_equip" class="row g-3 needs-validation"  novalidate method="POST" action="del_equip.php">
+          <label for="select_equip">Seleciona o equipamento a eliminar</label>
+          <select name="select_equip" id="select_equip" class="form-select">
               <option selected disabled value="">Escolhe...</option>
           </select>
-          <input type="submit" id="sub_rem_cmd" class="btn btn-primary" value="Submeter">
+          <input type="submit" id="sub_rem_equip" class="btn btn-primary" value="Submeter">
       </form>
-    </div>
+  </div>
     <!--Footer-->
     <footer class="text-center p-3">
       <p>© Emanuel Henriques - 2022</p>
@@ -80,6 +80,6 @@
     </div>
     <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.1.js"></script>
-    <script src="js/rem_cmd.js"></script>
+    <script src="js/rem_equip.js"></script>
 </body>
 </html>

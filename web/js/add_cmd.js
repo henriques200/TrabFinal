@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './list_os.php',
+            url: './get_os.php',
             dataType: "json",
             encode: true,
             cache: false,

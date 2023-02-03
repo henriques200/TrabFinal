@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './list_group.php',
+            url: './get_group.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './rem_group.php',
+                url: './remove_group.php',
                 data: $('#select_group').serializeArray(),
                 dataType: "json",
                 encode: true,

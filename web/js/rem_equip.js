@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './list_equip.php',
+            url: './get_equip.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './rem_equip.php',
+                url: './remove_equip.php',
                 data: $('#select_equip').serializeArray(),
                 dataType: "json",
                 encode: true,

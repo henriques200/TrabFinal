@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './list_group.php',
+            url: './get_group.php',
             dataType: "json",
             encode: true,
             cache: false,
