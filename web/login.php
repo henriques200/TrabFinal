@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         session_start();
         $_SESSION['username'] = $web_user;
         $_SESSION['password'] = $web_pass;
-        $_SESSION["loggedin"] = true;
+        $_SESSION['loggedin'] = true;
 
         // Redirect user to welcome page
         header("location: index.html");
@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error = 1;
         $msg = "Credenciais Inválidas!";
         new_event("ERRO", "Tentativa de acesso indevido!");
-        header("location: login.html");
+        header("location: login.php");
     }
 } else {
     $error = 1;
