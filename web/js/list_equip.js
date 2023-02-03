@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './get_equip.php',
+            url: './code/get_equip.php',
             dataType: "json",
             encode: true,
             cache: false,

@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './get_cmd.php',
+            url: './code/get_cmd.php',
             dataType: "json",
             encode: true,
             cache: false,

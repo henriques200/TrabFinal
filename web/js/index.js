@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './events.php',
+            url: './code/events.php',
             dataType: "json",
             encode: true,
             cache: false,

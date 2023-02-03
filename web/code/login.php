@@ -10,14 +10,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION['loggedin'] = true;
 
         // Redirect user to welcome page
-        header("location: index.html");
+        header("location: ..\index.php");
     } else {
         unset($_SESSION['username']);
         unset($_SESSION['password']);
         $error = 1;
         $msg = "Credenciais Inválidas!";
         new_event("ERRO", "Tentativa de acesso indevido!");
-        header("location: login.php");
+        header("location: ..\login.html");
     }
 } else {
     $error = 1;

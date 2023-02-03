@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './get_os.php',
+            url: './code/get_os.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -18,7 +18,7 @@ $(function(){
             }
         });
         $.ajax({
-            url: './get_group.php',
+            url: './code/get_group.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -73,7 +73,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './submit_equip.php',
+                url: './code/submit_equip.php',
                 data: $('#add_new_equip').serializeArray(),
                 dataType: "json",
                 encode: true,

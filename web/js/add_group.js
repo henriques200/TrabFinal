@@ -26,7 +26,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './submit_group.php',
+                url: './code/submit_group.php',
                 data: $('#submit_new_group').serializeArray(),
                 dataType: "json",
                 encode: true,

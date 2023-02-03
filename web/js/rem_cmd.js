@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './get_cmd.php',
+            url: './code/get_cmd.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './remove_cmd.php',
+                url: './code/remove_cmd.php',
                 data: $('#select_cmd').serializeArray(),
                 dataType: "json",
                 encode: true,

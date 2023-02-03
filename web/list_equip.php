@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Lista de Equipamentos</title>
+    <?php
+    require("./code/check_session.php");
+    ?>
 </head>
 <body>
     <!--Menu-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="images/home.png" alt="home" size="25" height="25"></a>
+        <a class="navbar-brand" href="index.php"><img src="images/home.png" alt="home" size="25" height="25"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,10 +26,10 @@
                 Equipamentos
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="add_equip.html">Adicionar</a></li>
-                <li><a class="dropdown-item" href="rem_equip.html">Remover</a></li>
+                <li><a class="dropdown-item" href="add_equip.php">Adicionar</a></li>
+                <li><a class="dropdown-item" href="remove_equip.php">Remover</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="list_equip.html">Verificar / Listar</a></li>
+                <li><a class="dropdown-item" href="list_equip.php">Verificar / Listar</a></li>
               </ul>
             </li>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -35,10 +38,10 @@
                   Grupos
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="add_group.html">Adicionar</a></li>
-                  <li><a class="dropdown-item" href="rem_group.html">Remover</a></li>
+                  <li><a class="dropdown-item" href="add_group.php">Adicionar</a></li>
+                  <li><a class="dropdown-item" href="remove_group.php">Remover</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="list_group.html">Verificar / Listar</a></li>
+                  <li><a class="dropdown-item" href="list_group.php">Verificar / Listar</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -46,17 +49,17 @@
                   Comandos
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="add_cmd.html">Adicionar</a></li>
-                  <li><a class="dropdown-item" href="rem_cmd.html">Remover</a></li>
+                  <li><a class="dropdown-item" href="add_cmd.php">Adicionar</a></li>
+                  <li><a class="dropdown-item" href="remove_cmd.php">Remover</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="list_cmd.html">Verificar / Listar</a></li>
+                  <li><a class="dropdown-item" href="list_cmd.php">Verificar / Listar</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sair</a>
+                <a class="nav-link" href="code/logout.php">Sair</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">Sobre o projeto</a>
+                <a class="nav-link" href="about.php">Sobre o projeto</a>
               </li>
             </ul>
         </div>

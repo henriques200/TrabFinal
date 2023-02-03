@@ -1,7 +1,7 @@
 $(function(){
     $(document).ready(function(e){
         $.ajax({
-            url: './get_os.php',
+            url: './code/get_os.php',
             dataType: "json",
             encode: true,
             cache: false,
@@ -42,7 +42,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './submit_cmd.php',
+                url: './code/submit_cmd.php',
                 data: $('#add_new_cmd').serializeArray(),
                 dataType: "json",
                 encode: true,
