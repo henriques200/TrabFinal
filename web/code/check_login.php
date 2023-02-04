@@ -2,10 +2,8 @@
 require("env.php");
 require("events.php");
 
-//if($_POST['username'] == $web_user && $_POST['password'] == $web_pass){
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if($_POST['username'] == "root" && $_POST['password'] == "root"){
+    if($_POST['username'] == $web_user && $_POST['password'] == $web_pass){
         $_SESSION['username'] = $web_user;
         $_SESSION['password'] = $web_pass;
         $_SESSION['loggedin'] = true;
@@ -18,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error = 1;
         $msg = "Credenciais Inválidas!";
         new_event("ERRO", "Tentativa de acesso indevido!");
-        header("location: ..\login.php");
+        header("location: ..\about.php");
     }
 } else {
     $error = 1;
