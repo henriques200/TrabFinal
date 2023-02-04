@@ -5,6 +5,9 @@ services:
     container_name: ti2_webserver
     build: ./web
     restart: unless-stopped
+    environment:
+      DB_ADDR: database #DB container name
+      DB_PASSWORD: root #DB container root password
     ports:
       - "8080:80" #Web port
     expose:
