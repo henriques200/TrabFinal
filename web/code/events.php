@@ -46,5 +46,5 @@ $msg = read_file();
 
 //Envia a resposta para a página HTML com o AJAX.
 //ERRO COM AS SESSOES PHP!
-//echo json_encode(array('error' => $error, 'message' => $msg, 'redirect' => $redirect));
+echo json_encode(array('error' => $error, 'message' => $msg, 'redirect' => $redirect));
 ?>
