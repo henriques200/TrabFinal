@@ -42,9 +42,9 @@ function read_file(){
 }
 
 
-$msg = read_file();
-
-//Envia a resposta para a página HTML com o AJAX.
-//ERRO COM AS SESSOES PHP!
-echo json_encode(array('error' => $error, 'message' => $msg, 'redirect' => $redirect));
+//Envia a resposta para a página HTML com o AJAX, se nao existir nenhum pedido POST.
+if(empty($_POST)){
+	$msg = read_file();
+	echo json_encode(array('error' => $error, 'message' => $msg, 'redirect' => $redirect));
+}
 ?>

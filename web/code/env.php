@@ -4,6 +4,8 @@ $servername = getenv("DB_ADDR");
 $username = getenv("DB_USER");
 $password = getenv("DB_PASSWORD");
 $dbname = "EQUIP_BD";
+
+//Web access parameters
 $web_user = getenv("WEB_USER");
 $web_pass = getenv("WEB_PASSWORD");
 
