@@ -1,5 +1,5 @@
 <?php
-    //require("./code/check_session.php");
+    require("./code/check_session.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt">

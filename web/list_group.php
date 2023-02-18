@@ -1,6 +1,3 @@
-<?php
-    require("./code/check_session.php");
-?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
