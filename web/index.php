@@ -1,6 +1,3 @@
-<?php
-    require("./code/check_session.php");
-?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -54,9 +51,6 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="list_cmd.php">Verificar / Listar</a></li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="code/logout.php">Sair</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.php">Sobre o projeto</a>

@@ -53,9 +53,6 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="code/logout.php">Sair</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="about.php">Sobre o projeto</a>
               </li>
             </ul>
