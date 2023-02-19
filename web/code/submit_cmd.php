@@ -21,17 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //Set the PDO error mode to exception.
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-      //Query to check certain groupname.
-      $search_codeaname = $conn->query("SELECT COUNT(*) FROM COMANDO WHERE Nome_codigo='$codename'");
+      //Query to check command codename.
+      $sql = "SELECT COUNT(*) FROM COMANDO WHERE Nome_codigo=:nome_codigo";
+      $search_codename = $conn->prepare($sql);
+      $search_codename->bindParam(':nome_codigo', $codename, PDO::PARAM_STR);
+      $search_codename->execute();
 
       //Check if Command Codename already exists.
-      if($search_codeaname->fetchColumn() > 0){
+      if($search_codename->fetchColumn() > 0){
         $error = 1;
         $msg = "O nome de código $codename já existe!";
       } else {
         //Insert new record.
-        $sql_insert_query = "INSERT INTO COMANDO (Nome_codigo, Comando, Descricao, OS) VALUES ('$codename', '$cmd', '$cmd_desc', '$os')";
-        $new_record = $conn->exec($sql_insert_query);
+        $sql = "INSERT INTO COMANDO (Nome_codigo, Comando, Descricao, OS) VALUES (:nome_codigo, :comando, :descricao, :os)";
+        $stmt = $conn->prepare($sql);
+        $new_record = $stmt->execute([':nome_codigo' => $codename, ':comando' => $cmd, ':descricao' => $cmd_desc, ':os' => $os]);
         $msg = "O comando $codename foi adicionado com sucesso!";
         new_event("INFO", $msg);
       }

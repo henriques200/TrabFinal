@@ -18,19 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Set the PDO error mode to exception.
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //Query to check certain groupname.
-        $search_codename = $conn->query("SELECT COUNT(*) FROM COMANDO WHERE Nome_codigo='$codename'");
+        //Query to check command codename.
+        $sql = "SELECT COUNT(*) FROM COMANDO WHERE Nome_codigo=:nome_codigo";
+        $search_codename = $conn->prepare($sql);
+        $search_codename->bindParam(':nome_codigo', $codename, PDO::PARAM_STR);
+        $search_codename->execute();
   
-        //Check if Group Name does not exists.
+        //Check if Group Name does exists and delete the record.
         if($search_codename->fetchColumn() > 0){
-            //Delete record.
-            $sql_insert_query = "DELETE FROM COMANDO WHERE Nome_codigo='$codename'";
-            $new_record = $conn->exec($sql_insert_query);
+            $sql = "DELETE FROM COMANDO WHERE Nome_codigo=:codename";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":codename", $codename, PDO::PARAM_STR);
+            $del_record = $stmt->execute();
             $msg = "O comando $codename foi removido com sucesso!";
             new_event("INFO", $msg);
         } else {
             $error = 1;
-            $msg = "O nome de código como o comando $codename não existe!";
+            $msg = "O comando c/ o código $codename não existe!";
         }
   
       } catch(PDOException $conn_error) {

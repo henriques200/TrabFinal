@@ -23,8 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //Set the PDO error mode to exception.
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-      //Query to check certain groupname.
-      $search_equip_name = $conn->query("SELECT COUNT(*) FROM EQUIPAMENTO WHERE Nome='$equip_name'");
+      //Query to check if equip name exists.
+      $sql = "SELECT COUNT(*) FROM EQUIPAMENTO WHERE Nome=:equip_name";
+      $search_equip_name = $conn->prepare($sql);
+      $search_equip_name->bindParam(':equip_name', $equip_name, PDO::PARAM_STR);
+      $search_equip_name->execute();
 
       //Check if Equipment already exists.
       if($search_equip_name->fetchColumn() > 0){
@@ -32,8 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "O equipamento $equip_name já existe!";
       } else {
         //Insert new record.
-        $sql_insert_query = "INSERT INTO EQUIPAMENTO (Nome, Ip_Nome, Username, Pass, OS, Grupo) VALUES ('$equip_name', '$ip_equip', '$user_equip', '$pass_equip', '$opt_os', '$select_group')";
-        $new_record = $conn->exec($sql_insert_query);
+        $sql = "INSERT INTO EQUIPAMENTO (Nome, Ip_Nome, Username, Pass, OS, Grupo) VALUES (:equip_name, :ip_equip, :user_equip, :pass_equip, :opt_os, :select_group)";
+        $stmt = $conn->prepare($sql);
+        $new_record = $stmt->execute([':equip_name' => $equip_name, ':ip_equip' => $ip_equip, ':user_equip' => $user_equip, ':pass_equip' => $pass_equip, ':opt_os' => $opt_os, ':select_group' => $select_group]);
         $msg = "O equipamento $equip_name foi adicionado com sucesso!";
         new_event("INFO", $msg);
       }

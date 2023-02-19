@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './code/remove_equip.php',
+                url: './code/del_equip.php',
                 data: $('#select_equip').serializeArray(),
                 dataType: "json",
                 encode: true,

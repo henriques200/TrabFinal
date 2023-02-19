@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './code/remove_group.php',
+                url: './code/del_group.php',
                 data: $('#select_group').serializeArray(),
                 dataType: "json",
                 encode: true,

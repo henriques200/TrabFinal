@@ -18,14 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Set the PDO error mode to exception.
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //Query to check certain groupname.
-        $search_group_name = $conn->query("SELECT COUNT(*) FROM EQUIPAMENTO WHERE Nome='$equip_name'");
+        //Query to check certain equipment.
+        $sql = "SELECT COUNT(*) FROM EQUIPAMENTO WHERE Nome=:equip_name";
+        $search_equip_name = $conn->prepare($sql);
+        $search_equip_name->bindParam(':equip_name', $equip_name, PDO::PARAM_STR);
+        $search_equip_name->execute();
   
-        //Check if Equip Name does not exists.
-        if($search_group_name->fetchColumn() > 0){
-            //Delete record.
-            $sql_insert_query = "DELETE FROM EQUIPAMENTO WHERE Nome='$equip_name'";
-            $new_record = $conn->exec($sql_insert_query);
+        //Check if Equip Name does exists and delete the record.
+        if($search_equip_name->fetchColumn() > 0){
+            $sql = "DELETE FROM EQUIPAMENTO WHERE Nome=:equip_name";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":equip_name", $equip_name, PDO::PARAM_STR);
+            $del_record = $stmt->execute();
             $msg = "O equipamento $equip_name foi removido com sucesso!";
             new_event("INFO", $msg);
         } else {

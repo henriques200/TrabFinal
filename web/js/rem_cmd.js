@@ -31,7 +31,7 @@ $(function(){
         } else {
             $.ajax({
                 type: 'POST',
-                url: './code/remove_cmd.php',
+                url: './code/del_cmd.php',
                 data: $('#select_cmd').serializeArray(),
                 dataType: "json",
                 encode: true,

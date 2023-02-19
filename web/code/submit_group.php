@@ -22,7 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
       //Query to check certain groupname.
-      $search_group_name = $conn->query("SELECT COUNT(*) FROM GRUPO WHERE Nome='$group_name'");
+      $sql = "SELECT COUNT(*) FROM GRUPO WHERE Nome=:group_name";
+      $search_group_name = $conn->prepare($sql);
+      $search_group_name->bindParam(':group_name', $group_name, PDO::PARAM_STR);
+      $search_group_name->execute();
 
       //Check if Group Name already exists.
       if($search_group_name->fetchColumn() > 0){
@@ -30,8 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "O nome do grupo $group_name já existe!";
       } else {
         //Insert new record.
-        $sql_insert_query = "INSERT INTO GRUPO (Nome, Dono, Phone, NIF) VALUES ('$group_name', '$group_owner', '$phone_number', '$nif')";
-        $new_record = $conn->exec($sql_insert_query);
+        $sql = "INSERT INTO GRUPO (Nome, Dono, Phone, NIF) VALUES (:group_name, :group_owner, :phone_number, :nif)";
+        $stmt = $conn->prepare($sql);
+        $new_record = $stmt->execute([':group_name' => $group_name, ':group_owner' => $group_owner, ':phone_number' => $phone_number, ':nif' => $nif]);
         $msg = "O grupo $group_name foi adicionado com sucesso!";
         new_event("INFO", $msg);
       }

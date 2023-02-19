@@ -9,7 +9,7 @@ $(function(){
                 //console.log(data); //Para fins de diagnóstico.
                 for(var row = 0; row < data.message.length; row++){
                     //console.log(data.message[row].Nome);
-                    var content = `<option value ="${data.message[row].Ip_Nome}">${data.message[row].Nome} - ${data.message[row].Ip_Nome} - ${data.message[row].OS}</option>`;
+                    var content = `<option value ="${data.message[row].Ip_Nome}" data-filter="${data.message[row].OS}">${data.message[row].Nome} - ${data.message[row].Ip_Nome} - ${data.message[row].OS}</option>`;
                     $("#opt_equip").append(content);
                 }
             },
@@ -27,7 +27,6 @@ $(function(){
                 for(var row = 0; row < data.message.length; row++){
                     //console.log(data.message[row].Nome);
                     var content = `<option value ="${data.message[row].Nome_codigo}">${data.message[row].Nome_codigo} - ${data.message[row].Comando}</option>`;
-                    //var content = "<tr><td>" + data.message[row].Nome_codigo + "</td><td>" + data.message[row].Comando +"</td><td>" + data.message[row].Descricao +"</td><td>" + data.message[row].OS +"</td></tr>";
                     $("#opt_cmd").append(content);
                 }
             },
@@ -36,6 +35,17 @@ $(function(){
             }
         });
         return false;
+    });
+    $("#opt_equip").on("change", function(){
+        var filter_value = $(this).val();
+        $("#opt_cmd option").each(function(){
+            var opt_filter = $(this).data('filter');
+            if(opt_filter === filter_value) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
     });
     $("form").submit(function(e){
         //Fetch the required form data.
@@ -67,7 +77,7 @@ $(function(){
                     console.log(data); //Para fins de diagnóstico.
                     if(data.error === 1) window.alert ("Erro!\n" + data.message);
                     else {
-                        window.alert("Comando adicionado com sucesso!");
+                        window.alert("Comando executado com sucesso!");
                         //$(#um-div-qualquer).append(data.message);
                     }
                 },
