@@ -9,7 +9,7 @@ $(function(){
                 //console.log(data); //Para fins de diagnóstico.
                 for(var row = 0; row < data.message.length; row++){
                     //console.log(data.message[row].Nome);
-                    var content = `<option value ="${data.message[row].Ip_Nome}" data-filter="${data.message[row].OS}">${data.message[row].Nome} - ${data.message[row].Ip_Nome} - ${data.message[row].OS}</option>`;
+                    var content = `<option value ="${data.message[row].Ip_Nome}" class="${data.message[row].OS}">${data.message[row].Nome} - ${data.message[row].Ip_Nome} - ${data.message[row].OS}</option>`;
                     $("#opt_equip").append(content);
                 }
             },
@@ -36,17 +36,37 @@ $(function(){
         });
         return false;
     });
-    $("#opt_equip").on("change", function(){
-        var filter_value = $(this).val();
+    /*$("#opt_equip").on("change", function(){
+        var dict = {};
+        $.ajax({
+            url: './code/get_cmd.php',
+            dataType: "json",
+            encode: true,
+            cache: false,
+            success: function(data){
+                //console.log(data); //Para fins de diagnóstico.
+                for(var row = 0; row < data.message.length; row++){
+                    //console.log(data.message[row].Nome);
+                    dict.set(data.message[row].Nome_codigo, data.message[row].OS);
+                    var content = `<option value ="${data.message[row].Nome_codigo}">${data.message[row].Nome_codigo} - ${data.message[row].Comando}</option>`;
+                    $("#opt_cmd").append(content);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                window.alert("Erro na aquisição de dados dos comandos!");
+            }
+        });
         $("#opt_cmd option").each(function(){
-            var opt_filter = $(this).data('filter');
+            var opt_filter = $("#opt_equip option:selected").data('filter');
+            console.log(opt_filter);
+            console.log(filter_value);
             if(opt_filter === filter_value) {
                 $(this).show();
             } else {
                 $(this).hide();
             }
         });
-    });
+    });*/
     $("form").submit(function(e){
         //Fetch the required form data.
         var opt_equip = $("#opt_equip option:selected").val().toString();
@@ -62,10 +82,14 @@ $(function(){
             e.preventDefault();
             return false;
         } else {
+            console.log($('#run_command').serializeArray());
+            console.log(opt_cmd);
+            console.log(opt_equip);
             $.ajax({
                 type: 'POST',
                 url: './code/run_cmd.php',
-                data: $('#run_cmd').serializeArray(),
+                //data: $('#run_command').serializeArray(),
+                data: {'opt_cmd': opt_cmd, 'opt_equip': opt_equip},
                 dataType: "json",
                 encode: true,
                 cache: false,

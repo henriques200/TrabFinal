@@ -62,7 +62,7 @@
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
         <h3>Executar comando</h3>
-        <form id="run_cmd" novalidate method="POST" action="code/run_cmd.php">
+        <form id="run_command" novalidate method="POST" action="code/run_cmd.php">
             <label for="opt_equip">Escolhe o equipamento</label>
             <select id="opt_equip" name="opt_equip" class="form-select">
                 <option selected disabled>Escolhe...</option>
