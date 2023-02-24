@@ -12,7 +12,8 @@ Este projeto consiste na construção de um site, utilizando o que foi aprendido
 ### Também se usou outras tecnologias na realização do site tais como:
 
 * Bootstrap 5
-* Jquery
+* jQuery
+* Docker
 
 ### Desenvolvido por:
 * Emanuel Henriques

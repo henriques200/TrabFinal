@@ -8,6 +8,8 @@ services:
     environment:
       DB_ADDR: database #DB container_name
       DB_PASSWORD: root #DB container root password
+      WEB_USER: root
+      WEB_PASSWORD: root
     ports:
       - "8080:80" #Web port
     expose:
