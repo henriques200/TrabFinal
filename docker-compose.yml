@@ -9,7 +9,7 @@ services:
       DB_ADDR: database #DB container_name
       DB_PASSWORD: root #DB container root password
     ports:
-      - "8080:80" #Web port
+      - "80:80" #Web port
     expose:
       - 3306
     networks:
