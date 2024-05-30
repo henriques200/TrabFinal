@@ -4,7 +4,7 @@ services:
   apache:
     container_name: ti2_webserver
     build: ./web
-    restart: unless-stopped
+    restart: always
     environment:
       DB_ADDR: database #DB container_name
       DB_PASSWORD: root #DB container root password
@@ -17,7 +17,7 @@ services:
   db:
     container_name: database
     image: mysql
-    restart: unless-stopped
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
