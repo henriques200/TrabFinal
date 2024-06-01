@@ -11,6 +11,9 @@ COPY . /var/www/html/
 RUN touch /var/www/html/code/events.json
 RUN chown -R www-data:www-data /var/www/html/*
 
+# Add the ServerName directive to Apache configuration
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Instalar pacotes necessarios
 RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-enable pdo_mysql
