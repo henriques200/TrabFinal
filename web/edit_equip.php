@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Adicionar Comando</title>
+    <title>Editar Equipamento</title>
 </head>
 <body>
     <!--Menu-->
@@ -62,31 +62,42 @@
     </nav>
     <!--Conteudo-->
     <div class="container mt-3 p-3 rounded" style="background-color: #e9ecef;">  
-        <h3>Introduzir novo Comando</h3>
-        <form id="add_new_cmd" novalidate method="POST" action="code/submit_cmd.php">
-            <div class="form-group">
-              <label for="codename">Nome de código do comando</label>
-              <input type="text" class="form-control" id="codename" name="codename" aria-describedby="codename_help" placeholder="Introduz um nome...">
-              <small id="group_help" class="form-text text-muted">Código único do comando (ex.: UPDATE-1)</small>
-            </div>
-            <div class="form-group">
-                <label for="cmd">Comando</label>
-                <input type="text" class="form-control" id="cmd" name="cmd" aria-describedby="cmd_help" placeholder="Introduz o comando...">
-                <small id="cmd_help" class="form-text text-muted">Comando CLI do OS</small>
-            </div>
-            <div class="form-group">
-                <label for="cmd_desc">Descrição do Comando</label>
-                <input type="text" class="form-control" id="cmd_desc" name="cmd_desc" aria-describedby="cmd_desc" placeholder="Introduz uma descrição...">
-                <small id="dono_help" class="form-text text-muted">Descrição breve do comando</small>
-            </div>
-            <label for="opt_os">Sistema Operativo</label>
-            <select id="opt_os" name="opt_os" class="form-select">
-                <option selected disabled>Escolhe...</option>
-            </select>
-            <br>
-            <button type="submit" id="submit_cmd" class="btn btn-primary">Submeter</button>
-          </form>
-    </div>
+      <h3>Editar Equipamento</h3>
+      <form id="edit_equip" class="row g-3 needs-validation"  novalidate method="POST" action="code/change_equip.php">
+          <label for="select_equip">Seleciona o equipamento a editar</label>
+          <select name="select_equip" id="select_equip" class="form-select">
+              <option selected disabled value="">Escolhe...</option>
+          </select>
+          <div class="form-group">
+            <label for="nome_equip">Nome do Equipamento</label>
+            <input type="text" class="form-control" id="nome_equip" name="nome_equip" disabled>
+            <small id="nome_help" class="form-text text-muted">Nome conhecido do equipamento</small>
+          </div>
+          <div class="form-group">
+            <label for="ip_equip">IP/FQDN do equipamento</label>
+            <input type="text" class="form-control" id="ip_equip" name="ip_equip" aria-describedby="ip_help" placeholder="Introduz um end. IP...">
+            <small id="ip_help" class="form-text text-muted">End. IP ou nome de domínio do equipamento</small>
+          </div>
+          <div class="form-group">
+            <label for="user_equip">Utilizador(username)</label>
+            <input type="text" class="form-control" id="user_equip" name="user_equip" aria-describedby="user_help" placeholder="Introduz o utilizador...">
+            <small id="user_help" class="form-text text-muted">Utizador que o serviço vai aceder remotamente</small>
+          </div>
+          <div class="form-group">
+          <label for="pass_equip">Password</label>
+            <input type="password" class="form-control" id="pass_equip" name="pass_equip" placeholder="Password">
+           </div>
+           <label for="opt_os">Sistema Operativo</label>
+           <select id="opt_os" name="opt_os" class="form-select">
+               <option selected disabled>Escolhe...</option>
+           </select>
+           <label for="select_group">Grupo</label>
+           <select id="select_group" name="select_group" class="form-select">
+               <option selected disabled>Escolhe...</option>
+           </select>
+         <input type="submit" id="sub_edit_equip" class="btn btn-primary" value="Editar">
+      </form>
+  </div>
     <!--Footer-->
     <footer class="text-center p-3">
       <p>© Emanuel Henriques - 2022</p>
@@ -94,6 +105,6 @@
     </div>
     <script src="bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.1.js"></script>
-    <script src="js/add_cmd.js"></script>
+    <script src="js/change_equip.js"></script>
 </body>
 </html>

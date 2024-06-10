@@ -25,6 +25,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="add_equip.php">Adicionar</a></li>
                 <li><a class="dropdown-item" href="remove_equip.php">Remover</a></li>
+                <li><a class="dropdown-item" href="edit_equip.php">Editar</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="list_equip.php">Verificar / Listar</a></li>
               </ul>

@@ -47,11 +47,11 @@ VALUES
 INSERT INTO GRUPO (Nome, Dono, Phone, NIF)
 VALUES
     ('Grupo 1', 'Emanuel Henriques', 911223344, 273300143),
-    ('Grupo 2', 'Rui Duarte', 967125479, 21253641),
-    ('Grupo 3', 'Paulo Duarte', 914822314, 197456321),
-    ('Grupo 4', 'Diogo Salgado', 965412365, 123456789),
-    ('Grupo 5', 'Leonardo Videira', 96516574, 987654321),
-    ('Grupo 6', 'André Matias', 975312548, 741258963);
+    ('Grupo 2', 'André Carvalho', 967125479, 21253641),
+    ('Grupo 3', 'Josué Antunes', 914822314, 197456321),
+    ('Grupo 4', 'José Câmara', 965412365, 123456789),
+    ('Grupo 5', 'Rui Cebola', 96516574, 987654321),
+    ('Grupo 6', 'Gabriel Clemente', 975312548, 741258963);
 
 INSERT INTO COMANDO (Nome_codigo, Comando, Descricao, OS) 
 VALUES
